@@ -1,6 +1,10 @@
 # Experiment 4
 
-Construct a recursive descent parser for an expression according to the grammar below.
+Write program to find First and Follow of any given grammar.
+
+Eg.
+
+Grammar
 E → TE’
 E’ → +TE’/- TE’/ε
 T → FT’
