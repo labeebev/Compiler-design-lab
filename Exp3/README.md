@@ -10,7 +10,7 @@ F → (E) / id
 
 
 
-INPUT FORMAT
+# Input format
 
 Enter the productions: 10
 
@@ -28,7 +28,7 @@ F=i         //id is represented using i
 
 
 
-OUTPUT FORMAT
+# Output format
 
 
 First(E) = { (, i, }
