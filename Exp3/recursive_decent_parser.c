@@ -25,7 +25,7 @@ void E(){
 	Eprime();
 	}
 void Eprime(){
-	if(input[i]=='+'){
+	if(input[i]=='+' || input[i] == '-' ){
 		i++;
 		T();
 		Eprime();
@@ -35,7 +35,7 @@ void T(){
 	Tprime();
 	}
 void Tprime(){
-	if(input[i]=='*'){
+	if(input[i]=='*' || input[i] == '/'){
 		i++;
 		F();
 		Tprime();
