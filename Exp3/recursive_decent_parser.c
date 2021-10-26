@@ -8,39 +8,48 @@ void Eprime();
 void Tprime();
 char input[10];
 int i,error;
+char abc[10];
+char cde[10];
 void main(){
 	i=0;
 	error=0;
-	printf("\n Enter the arithmetic expression :- ");
+	printf("\nEnter the arithmetic expression : ");
 	scanf("%s",input);
 	printf("%s",input);
 	E();
 	if(strlen(input)==i&&error==0)
-		printf("\nACCEPTED :)\n");
+		printf("\nAccepted\n");
 	else
-		printf("\nREJECTED :(\n");
-	}
+		printf("\nNot accepted\n");
+		if(strcmp(abc,"b")==0){
+			printf("Error: Bracket match not found!\n");
+		}
+		if(strcmp(cde,"s")==0){
+			printf("Error: Special character!\n");
+		}
+}
 void E(){
 	T();
 	Eprime();
-	}
+}
 void Eprime(){
-	if(input[i]=='+' || input[i] == '-' ){
-		i++;
-		T();
-		Eprime();
-	}}
+	if(input[i]=='+' || input[i]=='-'){
+	i++;
+	T();
+	Eprime();
+	}
+}
 void T(){
 	F();
 	Tprime();
-	}
+}
 void Tprime(){
-	if(input[i]=='*' || input[i] == '/'){
-		i++;
-		F();
-		Tprime();
+	if(input[i]=='*' || input[i]=='/'){
+	i++;
+	F();
+	Tprime();
 	}
-	}
+}
 void F(){
 	if(isalnum(input[i]))
 		i++;
@@ -51,8 +60,10 @@ void F(){
 			i++;
 		else
 			error=1;
+			strcpy(abc,"b");
 	}
-	else
+	else{
 		error=1;
+		strcpy(cde,"s");
 	}
-		
+}
