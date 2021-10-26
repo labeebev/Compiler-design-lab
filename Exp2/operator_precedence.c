@@ -140,7 +140,25 @@ while(i<=l)
 	}
 
 if(strcmp(stack,"$E$")==0)
-    printf("\nAccepted;");
-else
-    printf("\nNot Accepted;");
+   printf("\nAccepted;");
+else{
+	printf("\nNot Accepted\nError :\n");
+	for(j=top;j>=0;j--){
+			if((stack[j]=='(' || stack[j]==')')&& (p==0)){
+				printf("Paranthesis missing\n");
+				p=1;}
+				
+			else if(((stack[j]=='+' || stack[j]=='-' || stack[j]=='*' || stack[j]=='/' || stack[j]=='^') && (stack[j+1]='('))&&(opnd==0)){
+				printf("Operand missing\n");
+				opnd=1;}
+			else if(stack[j]=='E'){
+				if((stack[j-1]=='E' || stack[j-1]=='i')&&(optr==0)){
+					printf("Operator missing\n");
+					optr=1;}
+			}
+			else{
+				continue;
+			}
+		}
+	}
 }
