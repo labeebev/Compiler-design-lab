@@ -5,31 +5,23 @@ Write program to find First and Follow of any given grammar.
 Eg.
 
 Grammar
-E → TE’
-E’ → +TE’/- TE’/ε
-T → FT’
-T’ → *FT’/ /FT’/ ε
-F → (E) / id
+E → E + T | T
+T → T * F | F
+F → (E) | id
 
 
 
 
 # Input format
 
-Enter the productions: 10
+Enter the productions: 6
 
-E=TR        //E' is represented using R
-R=+TR
-R=-TR
-R=#
-T=FY        //T' is represented using Y
-Y=*FY
-Y=/FY
-Y=#
+E=E+T
+E=T
+T=T*F
+T=F
 F=(E)
-F=i         //id is represented using i
-
-
+F=i
 
 
 # Output format
@@ -37,22 +29,15 @@ F=i         //id is represented using i
 
 First(E) = { (, i, }
 
- First(R) = { +, -, #, }
-
  First(T) = { (, i, }
-
- First(Y) = { *, /, #, }
 
  First(F) = { (, i, }
 
 -----------------------------------------------
 
- Follow(E) = { $, ),  }
+ Follow(E) = { $, +, ),  }
 
- Follow(R) = { $, ),  }
+ Follow(T) = { $, +, ), *,  }
 
- Follow(T) = { +, -, $, ),  }
-
- Follow(Y) = { +, -, $, ),  }
-
- Follow(F) = { *, /, +, -, $, ),  }
+ Follow(F) = { $, +, ), *,  }
+ 
