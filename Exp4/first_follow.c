@@ -175,6 +175,9 @@ void findfirst(char c, int q1, int q2)
 	} 
 	for(j = 0; j < count; j++) 
 	{ 
+		if(production[j][0] == production[j][2]){
+	       		 continue;
+	   	 }
 		if(production[j][0] == c) 
 		{ 
 			if(production[j][2] == '#') 
